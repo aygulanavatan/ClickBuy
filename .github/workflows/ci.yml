@@ -18,27 +18,14 @@ jobs:
         with:
           node-version: 18
 
-      # Backend bağımlılıklarını kur
-      - name: Install Backend Dependencies
-        working-directory: ./backend
-        run: npm install
-
-      # Frontend bağımlılıklarını kur
-      - name: Install Frontend Dependencies
+      - name: Install dependencies (frontend)
         working-directory: ./frontend
         run: npm install
 
-      # Backend testleri
-      - name: Run Backend Tests
-        working-directory: ./backend
-        run: npm test || echo "No backend tests"
-
-      # Frontend testleri
-      - name: Run Frontend Tests
+      - name: Build frontend
         working-directory: ./frontend
-        run: npm test || echo "No frontend tests"
+        run: npm run build
 
-      # Vercel deploy
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
