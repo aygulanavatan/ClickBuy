@@ -1,0 +1,35 @@
+/* brands start */
+.brands {
+  margin: 40px 0;
+}
+
+.brand-list {
+  display: flex;
+  justify-content: space-around;  /* Araları dengeli açar */
+  align-items: center; /* Dikey hizalar */
+  flex-wrap: wrap;
+  border: 1px solid #dee0ea;
+  padding: 30px 10px;
+  background-color: #fff;
+}
+
+.brand-item {
+  flex: 1 1 150px;  /* Responsive ve eşit genişlik */
+  text-align: center;
+  padding: 10px;
+}
+
+.brand-item img {
+  width: 120px;   /* Bütün logolar eşit boyutta */
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(0);  /* Tam renkli yapar */
+  opacity: 1;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand-item img:hover {
+  transform: scale(1.1);
+}
+
+/* brands end */
